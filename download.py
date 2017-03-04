@@ -41,7 +41,7 @@ for movie_id in movies_ids:
 reviews_list = []
 for movie_id in movies_ids:
     print "Downloading reviews for:", imdbid_to_movie[movie_id].title
-    raw_reviews = imdb.get_title_reviews("tt0468569", max_results=15)
+    raw_reviews = imdb.get_title_reviews(movie_id, max_results=10000)
     reviews_list += [{"username": r.username, "text": r.text, "rating": r.rating} for r in raw_reviews]
 
 
